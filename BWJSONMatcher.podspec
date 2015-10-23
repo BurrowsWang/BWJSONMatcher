@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      	= { :type => 'MIT' }
   s.author       	= { "BurrowsWang" => "burrowswang@gmail.com" }
   s.platform     	= :ios, "6.0"
-  s.source       	= { :git => "git@github.com:BurrowsWang/BWJSONMatcher.git", :tag => s.version.to_s }
+  s.source       	= { :git => "https://github.com/BurrowsWang/BWJSONMatcher.git", :tag => s.version.to_s }
   s.source_files = 'BWJSONMatcher/*.{h,m,c}'
   s.requires_arc 	= true
   
