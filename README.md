@@ -4,7 +4,7 @@ BWJSONMatcher
 ![Pod Version](https://img.shields.io/badge/pod-v1.0.0-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-BWJSONMatcher is a lightweight library which helps you easily convert from a JSON string or JSON object to your data model.
+BWJSONMatcher is a lightweight library which helps you easily match a JSON string or JSON object up with your data model.
 
 It provides:
 
