@@ -46,6 +46,8 @@ NSDictionary *jsonObject = [BWJSONMatcher convertObjectToJSON:dataModel];
 
 ```
 
+Further detailed examples can be found [here](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/BWJSONMatcherTests/BWJSONMatcherTests.m#L87).
+
 Installation
 ------------
 #### Installation with CocoaPods (Recommend)
