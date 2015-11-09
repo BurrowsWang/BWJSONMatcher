@@ -6,14 +6,37 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		BAD06EF11BF0840E00306FB7 /* BWJSONMatcherFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BAD06EF21BF0840E00306FB7 /* Build configuration list for PBXAggregateTarget "BWJSONMatcherFramework" */;
+			buildPhases = (
+				BAD06EF71BF0882700306FB7 /* Build Framework */,
+			);
+			dependencies = (
+				BAD06EF61BF0843500306FB7 /* PBXTargetDependency */,
+			);
+			name = BWJSONMatcherFramework;
+			productName = BWJSONMatcherFramework;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		BA18F8441BD8DA9D007DA631 /* NSObject+BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA677271BD644AA00411E35 /* NSObject+BWJSONMatcher.m */; };
 		BA18F8451BD8DAA5007DA631 /* BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC91A9C1BCE063C00CDDFC6 /* BWJSONMatcher.m */; };
 		BAA6771D1BD6431C00411E35 /* BWJSONMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA6771C1BD6431C00411E35 /* BWJSONMatcherTests.m */; };
-		BAA6771F1BD6431C00411E35 /* libBWJSONMatcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC91A971BCE063C00CDDFC6 /* libBWJSONMatcher.a */; settings = {ASSET_TAGS = (); }; };
-		BAA677281BD644AA00411E35 /* NSObject+BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA677271BD644AA00411E35 /* NSObject+BWJSONMatcher.m */; settings = {ASSET_TAGS = (); }; };
-		BAB2D1FF1BD88BA90008003D /* BWJSONMatcherTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB2D1FE1BD88BA90008003D /* BWJSONMatcherTestModel.m */; settings = {ASSET_TAGS = (); }; };
-		BAC91A9B1BCE063C00CDDFC6 /* BWJSONMatcher.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAC91A9A1BCE063C00CDDFC6 /* BWJSONMatcher.h */; };
+		BAA6771F1BD6431C00411E35 /* libBWJSONMatcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC91A971BCE063C00CDDFC6 /* libBWJSONMatcher.a */; };
+		BAA677281BD644AA00411E35 /* NSObject+BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA677271BD644AA00411E35 /* NSObject+BWJSONMatcher.m */; };
+		BAB2D1FF1BD88BA90008003D /* BWJSONMatcherTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB2D1FE1BD88BA90008003D /* BWJSONMatcherTestModel.m */; };
+		BAC84A8D1BEC9BC90071DBE2 /* JSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC84A8C1BEC9BC90071DBE2 /* JSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAC84A921BEC9D090071DBE2 /* BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC91A9C1BCE063C00CDDFC6 /* BWJSONMatcher.m */; };
+		BAC84A931BEC9D090071DBE2 /* NSObject+BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA677271BD644AA00411E35 /* NSObject+BWJSONMatcher.m */; };
+		BAC84A941BEC9D350071DBE2 /* BWJSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC91A9A1BCE063C00CDDFC6 /* BWJSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAC84A951BEC9D350071DBE2 /* NSObject+BWJSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BAA677261BD644AA00411E35 /* NSObject+BWJSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAC84A961BEC9D350071DBE2 /* BWJSONValueObject.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB2D2001BD88C490008003D /* BWJSONValueObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAC84AC21BECAB900071DBE2 /* BWJSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC91A9A1BCE063C00CDDFC6 /* BWJSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAC84AC31BECAB900071DBE2 /* NSObject+BWJSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BAA677261BD644AA00411E35 /* NSObject+BWJSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAC84AC41BECAB900071DBE2 /* BWJSONValueObject.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB2D2001BD88C490008003D /* BWJSONValueObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAC91A9D1BCE063C00CDDFC6 /* BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC91A9C1BCE063C00CDDFC6 /* BWJSONMatcher.m */; };
 /* End PBXBuildFile section */
 
@@ -25,20 +48,14 @@
 			remoteGlobalIDString = BAC91A961BCE063C00CDDFC6;
 			remoteInfo = BWJSONMatcher;
 		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		BAC91A951BCE063C00CDDFC6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				BAC91A9B1BCE063C00CDDFC6 /* BWJSONMatcher.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+		BAD06EF51BF0843500306FB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAC91A8F1BCE063C00CDDFC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAC91A961BCE063C00CDDFC6;
+			remoteInfo = BWJSONMatcher;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BAA6771A1BD6431C00411E35 /* BWJSONMatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BWJSONMatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +66,9 @@
 		BAB2D1FD1BD88BA90008003D /* BWJSONMatcherTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWJSONMatcherTestModel.h; sourceTree = "<group>"; };
 		BAB2D1FE1BD88BA90008003D /* BWJSONMatcherTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWJSONMatcherTestModel.m; sourceTree = "<group>"; };
 		BAB2D2001BD88C490008003D /* BWJSONValueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWJSONValueObject.h; sourceTree = "<group>"; };
+		BAC84A8A1BEC9BC80071DBE2 /* JSONMatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONMatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC84A8C1BEC9BC90071DBE2 /* JSONMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONMatcher.h; sourceTree = "<group>"; };
+		BAC84A8E1BEC9BC90071DBE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC91A971BCE063C00CDDFC6 /* libBWJSONMatcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBWJSONMatcher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC91A9A1BCE063C00CDDFC6 /* BWJSONMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BWJSONMatcher.h; sourceTree = "<group>"; };
 		BAC91A9C1BCE063C00CDDFC6 /* BWJSONMatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BWJSONMatcher.m; sourceTree = "<group>"; };
@@ -60,6 +80,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAA6771F1BD6431C00411E35 /* libBWJSONMatcher.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC84A861BEC9BC80071DBE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,11 +119,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BAC84A8B1BEC9BC80071DBE2 /* JSONMatcher */ = {
+			isa = PBXGroup;
+			children = (
+				BAC84A8C1BEC9BC90071DBE2 /* JSONMatcher.h */,
+				BAC84A8E1BEC9BC90071DBE2 /* Info.plist */,
+			);
+			path = JSONMatcher;
+			sourceTree = "<group>";
+		};
 		BAC91A8E1BCE063C00CDDFC6 = {
 			isa = PBXGroup;
 			children = (
 				BAC91A991BCE063C00CDDFC6 /* BWJSONMatcher */,
 				BAA6771B1BD6431C00411E35 /* BWJSONMatcherTests */,
+				BAC84A8B1BEC9BC80071DBE2 /* JSONMatcher */,
 				BAC91A981BCE063C00CDDFC6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +143,7 @@
 			children = (
 				BAC91A971BCE063C00CDDFC6 /* libBWJSONMatcher.a */,
 				BAA6771A1BD6431C00411E35 /* BWJSONMatcherTests.xctest */,
+				BAC84A8A1BEC9BC80071DBE2 /* JSONMatcher.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +161,30 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BAC84A871BEC9BC80071DBE2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC84A941BEC9D350071DBE2 /* BWJSONMatcher.h in Headers */,
+				BAC84A951BEC9D350071DBE2 /* NSObject+BWJSONMatcher.h in Headers */,
+				BAC84A961BEC9D350071DBE2 /* BWJSONValueObject.h in Headers */,
+				BAC84A8D1BEC9BC90071DBE2 /* JSONMatcher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC84AC11BECAB7C0071DBE2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC84AC21BECAB900071DBE2 /* BWJSONMatcher.h in Headers */,
+				BAC84AC31BECAB900071DBE2 /* NSObject+BWJSONMatcher.h in Headers */,
+				BAC84AC41BECAB900071DBE2 /* BWJSONValueObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		BAA677191BD6431C00411E35 /* BWJSONMatcherTests */ = {
@@ -143,13 +205,32 @@
 			productReference = BAA6771A1BD6431C00411E35 /* BWJSONMatcherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BAC84A891BEC9BC80071DBE2 /* JSONMatcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAC84A911BEC9BC90071DBE2 /* Build configuration list for PBXNativeTarget "JSONMatcher" */;
+			buildPhases = (
+				BAC84A851BEC9BC80071DBE2 /* Sources */,
+				BAC84A861BEC9BC80071DBE2 /* Frameworks */,
+				BAC84A871BEC9BC80071DBE2 /* Headers */,
+				BAC84A881BEC9BC80071DBE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSONMatcher;
+			productName = JSONMatcher;
+			productReference = BAC84A8A1BEC9BC80071DBE2 /* JSONMatcher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		BAC91A961BCE063C00CDDFC6 /* BWJSONMatcher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAC91AA01BCE063C00CDDFC6 /* Build configuration list for PBXNativeTarget "BWJSONMatcher" */;
 			buildPhases = (
 				BAC91A931BCE063C00CDDFC6 /* Sources */,
 				BAC91A941BCE063C00CDDFC6 /* Frameworks */,
-				BAC91A951BCE063C00CDDFC6 /* CopyFiles */,
+				BAC84AC11BECAB7C0071DBE2 /* Headers */,
+				BAC84AC71BECABC60071DBE2 /* Prepare Framework */,
 			);
 			buildRules = (
 			);
@@ -166,14 +247,22 @@
 		BAC91A8F1BCE063C00CDDFC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Burrows.Wang;
 				TargetAttributes = {
 					BAA677191BD6431C00411E35 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
+					BAC84A891BEC9BC80071DBE2 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = VSL3J44Q9H;
+					};
 					BAC91A961BCE063C00CDDFC6 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = VSL3J44Q9H;
+					};
+					BAD06EF11BF0840E00306FB7 = {
+						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = VSL3J44Q9H;
 					};
 				};
@@ -192,6 +281,8 @@
 			targets = (
 				BAC91A961BCE063C00CDDFC6 /* BWJSONMatcher */,
 				BAA677191BD6431C00411E35 /* BWJSONMatcherTests */,
+				BAC84A891BEC9BC80071DBE2 /* JSONMatcher */,
+				BAD06EF11BF0840E00306FB7 /* BWJSONMatcherFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -204,7 +295,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BAC84A881BEC9BC80071DBE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAC84AC71BECABC60071DBE2 /* Prepare Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
+		};
+		BAD06EF71BF0882700306FB7 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=\"BWJSONMatcher\"\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nlipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BAA677161BD6431C00411E35 /* Sources */ = {
@@ -215,6 +344,15 @@
 				BA18F8441BD8DA9D007DA631 /* NSObject+BWJSONMatcher.m in Sources */,
 				BAA6771D1BD6431C00411E35 /* BWJSONMatcherTests.m in Sources */,
 				BAB2D1FF1BD88BA90008003D /* BWJSONMatcherTestModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC84A851BEC9BC80071DBE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC84A921BEC9D090071DBE2 /* BWJSONMatcher.m in Sources */,
+				BAC84A931BEC9D090071DBE2 /* NSObject+BWJSONMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +372,11 @@
 			isa = PBXTargetDependency;
 			target = BAC91A961BCE063C00CDDFC6 /* BWJSONMatcher */;
 			targetProxy = BAA677201BD6431C00411E35 /* PBXContainerItemProxy */;
+		};
+		BAD06EF61BF0843500306FB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAC91A961BCE063C00CDDFC6 /* BWJSONMatcher */;
+			targetProxy = BAD06EF51BF0843500306FB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -265,6 +408,53 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.burrowswang.BWJSONMatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BAC84A8F1BEC9BC90071DBE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JSONMatcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = me.burrowswang.JSONMatcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BAC84A901BEC9BC90071DBE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JSONMatcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = me.burrowswang.JSONMatcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -303,10 +493,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -339,28 +531,64 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
 		BAC91AA11BCE063C00CDDFC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = Headers;
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
 		};
 		BAC91AA21BCE063C00CDDFC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = Headers;
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		BAD06EF31BF0840E00306FB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAD06EF41BF0840E00306FB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -372,6 +600,15 @@
 			buildConfigurations = (
 				BAA677231BD6431C00411E35 /* Debug */,
 				BAA677241BD6431C00411E35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAC84A911BEC9BC90071DBE2 /* Build configuration list for PBXNativeTarget "JSONMatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC84A8F1BEC9BC90071DBE2 /* Debug */,
+				BAC84A901BEC9BC90071DBE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -393,6 +630,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BAD06EF21BF0840E00306FB7 /* Build configuration list for PBXAggregateTarget "BWJSONMatcherFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAD06EF31BF0840E00306FB7 /* Debug */,
+				BAD06EF41BF0840E00306FB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
