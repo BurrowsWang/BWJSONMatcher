@@ -1,8 +1,8 @@
 BWJSONMatcher
 =========
 ![Platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
-![Pod Version](https://img.shields.io/badge/pod-v1.0.1-orange.svg)
-![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)
+![Pod Version](https://img.shields.io/badge/pod-v1.0.2-green.svg)
+![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellowgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 BWJSONMatcher is a lightweight library which helps you easily match a JSON string or JSON object up with your data model.
@@ -51,6 +51,28 @@ NSDictionary *jsonObject = [BWJSONMatcher convertObjectToJSON:dataModel];
 
 ```
 
+#### How to handle property with type NSArray
+As with the example [here](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/BWJSONMatcherTests/BWJSONMatcherTestModel.h#L39), if you have a property with type NSArray, make your ValueObject conforms to the protocol [`BWJSONValueObject`](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/BWJSONMatcherTests/BWJSONMatcherTestModel.h#L19) and implement method [`typeInProperty:`](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/BWJSONMatcherTests/BWJSONMatcherTestModel.m#L29), tell BWJSONMatcher which type of object will be included in this array.
+
+```objective-c
+- (Class)typeInProperty:(NSString *)property {
+    if ([property isEqualToString:@"parray"]) {
+        return [TestModelB class];
+    }
+    
+    return nil;
+}
+```
+
+#### How to ignore certain properties
+In some cases, there will be certain properties which don't need to be extracted from json data. Provide the property names you want to ignore in class method [`ignoredProperties`](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/BWJSONMatcherTests/BWJSONMatcherTestModel.m#L76), BWJSONMatcher will ignore these properties when matching json data with your ValueObject.
+
+```objective-c
++ (NSArray *)ignoredProperties {
+    return @[@"pint", @"pmodelc"];
+}
+```
+
 Further detailed examples can be found [here](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/BWJSONMatcherTests/BWJSONMatcherTests.m#L87).
 
 Installation
@@ -62,7 +84,7 @@ Installation
 ```ruby
 platform :ios, '6.0'
 
-pod 'BWJSONMatcher', '~>1.0.0'
+pod 'BWJSONMatcher', '~>1.0.2'
 ```
 
 ### Installation with Carthage (iOS 8+)
