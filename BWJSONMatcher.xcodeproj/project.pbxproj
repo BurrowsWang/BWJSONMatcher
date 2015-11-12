@@ -153,9 +153,9 @@
 			children = (
 				BAC91A9A1BCE063C00CDDFC6 /* BWJSONMatcher.h */,
 				BAC91A9C1BCE063C00CDDFC6 /* BWJSONMatcher.m */,
+				BAB2D2001BD88C490008003D /* BWJSONValueObject.h */,
 				BAA677261BD644AA00411E35 /* NSObject+BWJSONMatcher.h */,
 				BAA677271BD644AA00411E35 /* NSObject+BWJSONMatcher.m */,
-				BAB2D2001BD88C490008003D /* BWJSONValueObject.h */,
 			);
 			path = BWJSONMatcher;
 			sourceTree = "<group>";
@@ -391,6 +391,7 @@
 				INFOPLIST_FILE = BWJSONMatcherTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.burrowswang.BWJSONMatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -406,6 +407,7 @@
 				INFOPLIST_FILE = BWJSONMatcherTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.burrowswang.BWJSONMatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -496,7 +498,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -534,7 +536,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -551,7 +553,7 @@
 				);
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
 				SKIP_INSTALL = YES;
@@ -568,7 +570,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
 				SKIP_INSTALL = YES;
@@ -638,6 +640,7 @@
 				BAD06EF41BF0840E00306FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

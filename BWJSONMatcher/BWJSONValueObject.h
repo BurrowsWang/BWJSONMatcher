@@ -51,6 +51,13 @@
  */
 - (void)matchDidFinish;
 
+/*!
+ * In some cases, there will be certain properties which don't need to be extracted from json data.
+ * Provide all property names that you want to ignore here.
+ * @return An array that contains all property name you want to ignore
+ */
++ (NSArray *)ignoredProperties;
+
 @end
 
 #endif /* BWJSONValueObject_h */

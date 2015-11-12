@@ -50,12 +50,12 @@
             && self.pulonglong == target.pulonglong
             && self.pinteger == target.pinteger
             && self.puinteger == target.puinteger
-            && [self.pdictionary isEqualToDictionary:target.pdictionary]
-            && [self.parray isEqualToArray:target.parray]
-            && [self.pstring isEqualToString:target.pstring]
-            && [self.pdecimalnumber isEqualToNumber:target.pdecimalnumber]
-            && [self.pnumber isEqualToNumber:target.pnumber]
-            && [self.pmodelc isEqual:target.pmodelc]) {
+            && ((self.pdictionary == nil && target.pdictionary == nil) || [self.pdictionary isEqualToDictionary:target.pdictionary])
+            && ((self.parray == nil && target.parray == nil) || [self.parray isEqualToArray:target.parray])
+            && ((self.pstring == nil && target.pstring == nil) || [self.pstring isEqualToString:target.pstring])
+            && ((self.pdecimalnumber == nil && target.pdecimalnumber == nil) || [self.pdecimalnumber isEqualToNumber:target.pdecimalnumber])
+            && ((self.pnumber == nil && target.pnumber == nil) || [self.pnumber isEqualToNumber:target.pnumber])
+            && ((self.pmodelc == nil && target.pmodelc == nil) || [self.pmodelc isEqual:target.pmodelc])) {
             return YES;
         }
     }
@@ -70,6 +70,13 @@
     self.pdouble *= 1000.0f;
      */
 }
+
+// provide the property names of the properties you want to ignore here
+/*
++ (NSArray *)ignoredProperties {
+    return @[@"pint", @"pmodelc"];
+}
+ */
 
 @end
 
@@ -88,8 +95,8 @@
         TestModelB *target = (TestModelB *)object;
         
         if ([super isEqual:target]
-            && [self.bp1 isEqualToString:target.bp1]
-            && [self.bp2 isEqualToArray:target.bp2]) {
+            && ((self.bp1 == nil && target.bp1 == nil) || [self.bp1 isEqualToString:target.bp1])
+            && ((self.bp2== nil && target.bp2 == nil) || [self.bp2 isEqualToArray:target.bp2])) {
             return YES;
         }
     }
@@ -105,8 +112,8 @@
     if ([object isKindOfClass:[TestModelC class]]) {
         TestModelC *target = (TestModelC *)object;
         
-        if ([self.cp1 isEqualToString:target.cp1]
-            && [self.cp2 isEqual:target.cp2]) {
+        if (((self.cp1 == nil && target.cp1 == nil) || [self.cp1 isEqualToString:target.cp1])
+            && ((self.cp2 == nil && target.cp2 == nil) || [self.cp2 isEqual:target.cp2])) {
             return YES;
         }
     }
@@ -122,7 +129,7 @@
     if ([object isKindOfClass:[TestModelD class]]) {
         TestModelD *target = (TestModelD *)object;
         
-        if ([self.dp isEqualToString:target.dp]) {
+        if ((self.dp == nil && target.dp == nil) || [self.dp isEqualToString:target.dp]) {
             return YES;
         }
     }

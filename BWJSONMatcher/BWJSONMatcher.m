@@ -167,6 +167,20 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     objc_property_t *properties = class_copyPropertyList(classType, &propertyCount);
     NSCharacterSet *quotes = [NSCharacterSet characterSetWithCharactersInString:@"@\""];
     
+    // check if there are some properties of this classType need to be ignored
+    NSArray *ignoredProperties = nil;
+    SEL ignoredPropertiesSelector = NSSelectorFromString(@"ignoredProperties");
+    if ([classType respondsToSelector:ignoredPropertiesSelector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        NSArray *propertyArray = [classType performSelector:ignoredPropertiesSelector];
+        
+        if ([propertyArray isKindOfClass:[NSArray class]] && [propertyArray count] > 0) {
+            ignoredProperties = propertyArray;
+        }
+#pragma clang diagnostic pop
+    }
+    
     // iterate all the properties defined in classType
     for (unsigned int i = 0; i < propertyCount; i++) {
         @autoreleasepool {
@@ -185,6 +199,11 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
             NSString *propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
             id rawValue = [json valueForKey:propertyName];
             if (isNullValue(rawValue)) {
+                continue;
+            }
+            
+            // check if we should ignore this property
+            if (ignoredProperties && [ignoredProperties containsObject:propertyName]) {
                 continue;
             }
             
@@ -290,8 +309,7 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
                 }
                 
                 [result setValue:@(longLongValue) forKey:propertyName];
-            }
-            else if ([trimmedType isEqualToString:@"f"]) {    // float
+            } else if ([trimmedType isEqualToString:@"f"]) {    // float
                 float floatValue = 0.0f;
                 
                 if ([rawValue respondsToSelector:@selector(floatValue)]) {
@@ -414,6 +432,20 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     objc_property_t *properties = class_copyPropertyList(classType, &propertyCount);
     NSCharacterSet *quotes = [NSCharacterSet characterSetWithCharactersInString:@"@\""];
     
+    // check if there are some properties of this classType need to be ignored
+    NSArray *ignoredProperties = nil;
+    SEL ignoredPropertiesSelector = NSSelectorFromString(@"ignoredProperties");
+    if ([classType respondsToSelector:ignoredPropertiesSelector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        NSArray *propertyArray = [classType performSelector:ignoredPropertiesSelector];
+        
+        if ([propertyArray isKindOfClass:[NSArray class]] && [propertyArray count] > 0) {
+            ignoredProperties = propertyArray;
+        }
+#pragma clang diagnostic pop
+    }
+    
     // iterate all the properties of parameter object
     for (unsigned int i = 0; i < propertyCount; i++) {
         @autoreleasepool {
@@ -426,6 +458,18 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
                 continue;
             }
             
+            // get the name and value of this property
+            NSString *propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
+            id rawValue = [object valueForKey:propertyName];
+            if (isNullValue(rawValue)) {
+                continue;
+            }
+            
+            // check if we should ignore this property
+            if (ignoredProperties && [ignoredProperties containsObject:propertyName]) {
+                continue;
+            }
+            
             // get the type of this property
             char *type = property_copyAttributeValue(property, "T");
             NSString *propertyType = [NSString stringWithCString:type encoding:NSUTF8StringEncoding];
@@ -435,13 +479,6 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
             
             // trim all the redundant chars in type
             NSString *trimmedType = [propertyType stringByTrimmingCharactersInSet:quotes];
-            
-            // get the value of this property
-            NSString *propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
-            id rawValue = [object valueForKey:propertyName];
-            if (isNullValue(rawValue)) {
-                continue;
-            }
             
             if ([trimmedType isEqualToString:kTypeNSDictionary]
                 || [trimmedType isEqualToString:kTypeNSString]
