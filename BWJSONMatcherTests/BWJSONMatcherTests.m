@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 
 #import "BWJSONMatcherTestModel.h"
+
+#import "BWJSONMatcher.h"
 #import "NSObject+BWJSONMatcher.h"
 
 #define kDataBool                   YES
@@ -81,6 +83,16 @@
     XCTAssertEqualObjects(dataModelA.pdecimalnumber, kDataDecimal, @"pdecimalnumber error");
     XCTAssertEqualObjects(dataModelA.pnumber, kDataNumber, @"pnumber error");
     XCTAssert([dataModelA.pmodelc.cp2.dp isEqualToString:kDataString], @"pmodelc error");
+}
+
+- (void)testArrayFromJSONArray {
+    NSString *jsonString = [self.dictionaryA toJSONString];
+    TestModelA *dataModelA = [TestModelA fromJSONString:jsonString];
+    
+    NSString *arrayString = [BWJSONMatcher convertObjectToJSONString:dataModelA.parray];
+    NSArray *modelBArray = [BWJSONMatcher matchJSONString:arrayString withClass:[TestModelB class]];
+    
+    XCTAssertEqualObjects(dataModelA.parray, modelBArray, @"match array with json array error");
 }
 
 - (void)testMutualConvert {

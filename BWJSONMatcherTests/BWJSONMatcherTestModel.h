@@ -16,13 +16,13 @@
 @class TestModelC;
 @class TestModelD;
 
-@interface TestModelBase : NSObject <BWJSONValueObject>
+@interface TestModelBase : NSObject
 
 @property (nonatomic, assign) BOOL                  pbool;
 
 @end
 
-@interface TestModelA : TestModelBase
+@interface TestModelA : TestModelBase <BWJSONHasArrayProperties, BWJSONHasIgnoredProperties, BWJSONHasToAmendProperties>
 
 @property (nonatomic, assign) int                   pint;
 @property (nonatomic, assign) unsigned int          puint;
@@ -44,7 +44,7 @@
 
 @end
 
-@interface TestModelB : TestModelBase
+@interface TestModelB : TestModelBase <BWJSONHasArrayProperties>
 
 @property (nonatomic, strong) NSString              *bp1;
 @property (nonatomic, strong) NSArray               *bp2;

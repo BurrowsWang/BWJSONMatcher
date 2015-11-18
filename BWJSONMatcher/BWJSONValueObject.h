@@ -28,10 +28,76 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - BWJSONHasArrayProperties
+
 /*!
- * We strongly recommend that all of your data models should be descendants of NSObject,
- * and conform to this protocol as well
+ * The protocol indicates that your JSON value object has several NSArray properties.
  */
+@protocol BWJSONHasArrayProperties <NSObject>
+
+@required
+
+/*!
+ * If your JSON value object contains NSArray properties, this method should be implemented,
+ * if not, the data contained in this array will not be matched properly
+ * @param property Property name of the array
+ * @return Type of data that contained in this property which should be an array
+ */
+- (Class)typeInProperty:(NSString *)property;
+
+@end
+
+
+#pragma mark - BWJSONHasIgnoredProperties
+
+/*!
+ * The protocol indicates that your JSON value object has several properties need to be ignored when matching with JSON data or JSON string.
+ */
+@protocol BWJSONHasIgnoredProperties <NSObject>
+
+@required
+
+/*!
+ * In some cases, there will be certain properties which don't need to be extracted from json data.
+ * Provide all property names that you want to ignore here.
+ * @return An array that contains all property name you want to ignore
+ */
++ (NSArray *)ignoredProperties;
+
+@end
+
+
+#pragma mark - BWJSONHasToAmendProperties
+
+/*!
+ * The protocol indicates that your JSON value object has several properties need to be amended after been matched up with JSON data or JSON string.
+ */
+@protocol BWJSONHasToAmendProperties <NSObject>
+
+@required
+
+/*!
+ * You should never call this method directly. This method will be invoked automatically after all
+ * properties have been matched. If you have to prune or amend some values of your json object
+ * according to the business logic, place the code here
+ */
+- (void)matchDidFinish;
+
+@end
+
+
+#pragma mark - BWJSONValueObject (Deprecated)
+
+/*!
+ * Deprecated. We strongly recommend that all of your data models should be descendants of NSObject,
+ * and conform to this protocol as well
+ *
+ * This protocol have been deprecated since version 1.1.0 and will be removed in a later release.
+ * Please use BWJSONHasArrayProperties, BWJSONHasIgnoredProperties and BWJSONHasToAmendProperties instead.
+ */
+__deprecated_msg("Use BWJSONHasArrayProperties, BWJSONHasIgnoredProperties and BWJSONHasToAmendProperties instead.")
 @protocol BWJSONValueObject <NSObject>
 
 @optional
@@ -59,5 +125,7 @@
 + (NSArray *)ignoredProperties;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif /* BWJSONValueObject_h */

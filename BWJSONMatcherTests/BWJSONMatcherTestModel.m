@@ -26,12 +26,20 @@
 
 @implementation TestModelA
 
++ (NSArray *)ignoredProperties {
+    return @[@"puinteger"];
+}
+
 - (Class)typeInProperty:(NSString *)property {
     if ([property isEqualToString:@"parray"]) {
         return [TestModelB class];
     }
     
     return nil;
+}
+
+- (void)matchDidFinish {
+    self.puinteger = ABS(self.pinteger);
 }
 
 - (BOOL)isEqual:(id)object {
@@ -62,21 +70,6 @@
     
     return NO;
 }
-
-- (void)matchDidFinish {
-    // you can prune or amend some values here if necessory
-    /*
-    self.pfloat /= 1000.0f;
-    self.pdouble *= 1000.0f;
-     */
-}
-
-// provide the property names of the properties you want to ignore here
-/*
-+ (NSArray *)ignoredProperties {
-    return @[@"pint", @"pmodelc"];
-}
- */
 
 @end
 

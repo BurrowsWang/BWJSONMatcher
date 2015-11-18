@@ -95,7 +95,7 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
 
 @implementation BWJSONMatcher
 
-+ (id)matchJSON:(id)json withClass:(__unsafe_unretained Class)classType {
++ (nullable id)matchJSON:(id)json withClass:(__unsafe_unretained Class)classType {
     // make sure the parameters are all safe
     if (classType == nil || (![json isKindOfClass:[NSDictionary class]] && ![json isKindOfClass:[NSArray class]])) return nil;
     
@@ -128,6 +128,25 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
         }
         
         return result;
+    }
+}
+
++ (nullable id)matchJSONString:(NSString *)jsonString withClass:(__unsafe_unretained Class)classType {
+    // make sure the json string is valid and convertible
+    if (!jsonString || classType == nil) return nil;
+    
+    NSError *error = nil;
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    // convert json string to json object in Objective-c first
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+        
+        // unconvertible json string
+        return nil;
+    } else {
+        return [self matchJSON:jsonObj withClass:classType];
     }
 }
 
@@ -377,7 +396,7 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     free(properties);
 }
 
-+ (id)convertObjectToJSON:(id)object {
++ (nullable id)convertObjectToJSON:(id)object {
     if (isNullValue(object)) return nil;
     
     if ([object isKindOfClass:[NSString class]]
@@ -424,6 +443,26 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
         }
         
         return [NSDictionary dictionaryWithDictionary:dictionary];
+    }
+}
+
++ (nullable id)convertObjectToJSONString:(id)object {
+    // convert the object to an json object in Objective-c first
+    id jsonObj = [self convertObjectToJSON:object];
+    if (!jsonObj) {
+        return nil;
+    }
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonObj options:0 error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+        
+        return @"";
+    } else {
+        // return a string with encoding utf-8
+        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
 }
 

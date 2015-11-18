@@ -1,0 +1,22 @@
+{
+    "about": "This is Mahesh's Cafe!",
+    "location": {
+        "city": "Menlo Park",
+        "country": "United States",
+        "latitude": 37.482266,
+        "longitude": -122.150546,
+        "state": "CA",
+        "street": "1601 Willow Rd",
+        "zip": "94025"
+    },
+    "parking": {
+        "lot": 0,
+        "street": 0,
+        "valet": 0
+    },
+    "emails": [
+               "hi@hello.com"
+               ],
+    "website": "http://www.maheshcafe.com", 
+    "id": "546349135390552"
+}

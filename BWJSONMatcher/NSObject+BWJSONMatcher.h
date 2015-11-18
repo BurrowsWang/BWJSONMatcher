@@ -46,14 +46,14 @@ NS_ASSUME_NONNULL_BEGIN
  * @param jsonObject json object you want to parse
  * @return A brand new instance of this class
  */
-+ (instancetype)fromJSONObject:(id)jsonObject;
++ (nullable instancetype)fromJSONObject:(id)jsonObject;
 
 /*!
  * Parse a json string, convert it to an instance of receiver class
  * @param jsonString json string you want to parse
  * @return A brand new instance of this class
  */
-+ (instancetype)fromJSONString:(NSString *)jsonString;
++ (nullable instancetype)fromJSONString:(NSString *)jsonString;
 
 @end
 

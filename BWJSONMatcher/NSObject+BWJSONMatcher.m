@@ -34,40 +34,15 @@
 }
 
 - (NSString *)toJSONString {
-    id jsonObj = [self toJSONObject];
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonObj options:0 error:&error];
-    
-    if (error) {
-        NSLog(@"%@", [error localizedDescription]);
-        
-        return @"";
-    } else {
-        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
+    return [BWJSONMatcher convertObjectToJSONString:self];
 }
 
-+ (instancetype)fromJSONObject:(id)jsonObject {
++ (nullable instancetype)fromJSONObject:(id)jsonObject {
     return [BWJSONMatcher matchJSON:jsonObject withClass:[self class]];
 }
 
-+ (instancetype)fromJSONString:(NSString *)jsonString {
-    if (!jsonString) {
-        return nil;
-    }
-    
-    NSError *error = nil;
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    
-    if (error) {
-        NSLog(@"%@", [error localizedDescription]);
-        
-        return nil;
-    } else {
-        return [BWJSONMatcher matchJSON:jsonObj withClass:[self class]];
-    }
++ (nullable instancetype)fromJSONString:(NSString *)jsonString {
+    return [BWJSONMatcher matchJSONString:jsonString withClass:[self class]];
 }
 
 @end

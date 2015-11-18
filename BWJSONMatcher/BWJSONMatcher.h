@@ -43,17 +43,35 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
  * Match all properties of a json object with those of a Class, convert the json object to an object of the given class type
  * @param json The json object, which should be NSDictionary or NSArray
  * @param classType To which type you want convert this json object to,
- *        if the type of json is NSArray, parameter classType indicate the object inside json array
- * @return A converted data model of the given class or nil if any parameter is invalid
+ *        if the type of json is NSArray, parameter classType indicates the object inside json array
+ * @return A converted data model of the given class or NSArray or nil if any parameter is invalid
  */
-+ (id)matchJSON:(id)json withClass:(__unsafe_unretained Class)classType;
++ (nullable id)matchJSON:(id)json withClass:(__unsafe_unretained Class)classType;
+
+/*!
+ * Convert a json string to an object of the given class type. If the json string is array style e.g. '[...]',
+           an instance of NSArray contains instances of given class will be returned.
+           Otherwise, an instance of given class will be returned.
+ * @param jsonString The json string, both object style e.g. '{...}' and array style e.g. '[...]' are acceptable
+ * @param classType If the json string is array style e.g. '[...]', classType indicates the object inside json array.
+                    If the json string is object style e.g. '{...}', classType indicates the class type that matched this json string
+ * @return A converted data model of the given class or NSArray or nil if any parameter is invalid
+ */
++ (nullable id)matchJSONString:(NSString *)jsonString withClass:(__unsafe_unretained Class)classType;
 
 /*!
  * Convert a data model to json object
  * @param object The object you want to convert
  * @return A json object that converted from parameter object, could be NSDictionary or NSArray depending on the parameter you passed
  */
-+ (id)convertObjectToJSON:(id)object;
++ (nullable id)convertObjectToJSON:(id)object;
+
+/*!
+ * Convert a data model to json string
+ * @param object The object you want to convert
+ * @return A json string representing the object you passed in, could be object style or array style depending on the parameter you passed
+ */
++ (nullable id)convertObjectToJSONString:(id)object;
 
 @end
 

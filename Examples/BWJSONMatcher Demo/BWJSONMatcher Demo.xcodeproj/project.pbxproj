@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA6047201BFC698A003099AC /* BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BA60471C1BFC698A003099AC /* BWJSONMatcher.m */; };
+		BA6047211BFC698A003099AC /* NSObject+BWJSONMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BA60471D1BFC698A003099AC /* NSObject+BWJSONMatcher.m */; };
+		BA6047241BFC6DDC003099AC /* GoogleGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6047231BFC6DDC003099AC /* GoogleGroupController.m */; };
+		BABD350C1BFB2B6A00BF4FE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD350B1BFB2B6A00BF4FE9 /* main.m */; };
+		BABD350F1BFB2B6A00BF4FE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD350E1BFB2B6A00BF4FE9 /* AppDelegate.m */; };
+		BABD35121BFB2B6A00BF4FE9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD35111BFB2B6A00BF4FE9 /* MainViewController.m */; };
+		BABD35151BFB2B6A00BF4FE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABD35131BFB2B6A00BF4FE9 /* Main.storyboard */; };
+		BABD35171BFB2B6A00BF4FE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABD35161BFB2B6A00BF4FE9 /* Assets.xcassets */; };
+		BABD351A1BFB2B6A00BF4FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABD35181BFB2B6A00BF4FE9 /* LaunchScreen.storyboard */; };
+		BABD35301BFB2CED00BF4FE9 /* FacebookPage.json in Resources */ = {isa = PBXBuildFile; fileRef = BABD352F1BFB2CED00BF4FE9 /* FacebookPage.json */; };
+		BABD35321BFB2FBF00BF4FE9 /* GoogleGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = BABD35311BFB2FBF00BF4FE9 /* GoogleGroups.json */; };
+		BABD35361BFB306000BF4FE9 /* FacebookPageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD35351BFB306000BF4FE9 /* FacebookPageInfo.m */; };
+		BABD35391BFB307200BF4FE9 /* GoogleGroupInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD35381BFB307200BF4FE9 /* GoogleGroupInfo.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BA60471B1BFC698A003099AC /* BWJSONValueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWJSONValueObject.h; path = ../../BWJSONMatcher/BWJSONValueObject.h; sourceTree = "<group>"; };
+		BA60471C1BFC698A003099AC /* BWJSONMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWJSONMatcher.m; path = ../../BWJSONMatcher/BWJSONMatcher.m; sourceTree = "<group>"; };
+		BA60471D1BFC698A003099AC /* NSObject+BWJSONMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+BWJSONMatcher.m"; path = "../../BWJSONMatcher/NSObject+BWJSONMatcher.m"; sourceTree = "<group>"; };
+		BA60471E1BFC698A003099AC /* NSObject+BWJSONMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+BWJSONMatcher.h"; path = "../../BWJSONMatcher/NSObject+BWJSONMatcher.h"; sourceTree = "<group>"; };
+		BA60471F1BFC698A003099AC /* BWJSONMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWJSONMatcher.h; path = ../../BWJSONMatcher/BWJSONMatcher.h; sourceTree = "<group>"; };
+		BA6047221BFC6DDC003099AC /* GoogleGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleGroupController.h; sourceTree = "<group>"; };
+		BA6047231BFC6DDC003099AC /* GoogleGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleGroupController.m; sourceTree = "<group>"; };
+		BABD35071BFB2B6A00BF4FE9 /* BWJSONMatcher Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BWJSONMatcher Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BABD350B1BFB2B6A00BF4FE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BABD350D1BFB2B6A00BF4FE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BABD350E1BFB2B6A00BF4FE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BABD35101BFB2B6A00BF4FE9 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		BABD35111BFB2B6A00BF4FE9 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		BABD35141BFB2B6A00BF4FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BABD35161BFB2B6A00BF4FE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BABD35191BFB2B6A00BF4FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BABD351B1BFB2B6A00BF4FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BABD352F1BFB2CED00BF4FE9 /* FacebookPage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FacebookPage.json; sourceTree = "<group>"; };
+		BABD35311BFB2FBF00BF4FE9 /* GoogleGroups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleGroups.json; sourceTree = "<group>"; };
+		BABD35341BFB306000BF4FE9 /* FacebookPageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookPageInfo.h; sourceTree = "<group>"; };
+		BABD35351BFB306000BF4FE9 /* FacebookPageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookPageInfo.m; sourceTree = "<group>"; };
+		BABD35371BFB307200BF4FE9 /* GoogleGroupInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleGroupInfo.h; sourceTree = "<group>"; };
+		BABD35381BFB307200BF4FE9 /* GoogleGroupInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleGroupInfo.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BABD35041BFB2B6A00BF4FE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA60471A1BFC6966003099AC /* BWJSONMatcher */ = {
+			isa = PBXGroup;
+			children = (
+				BA60471F1BFC698A003099AC /* BWJSONMatcher.h */,
+				BA60471C1BFC698A003099AC /* BWJSONMatcher.m */,
+				BA60471B1BFC698A003099AC /* BWJSONValueObject.h */,
+				BA60471E1BFC698A003099AC /* NSObject+BWJSONMatcher.h */,
+				BA60471D1BFC698A003099AC /* NSObject+BWJSONMatcher.m */,
+			);
+			name = BWJSONMatcher;
+			sourceTree = "<group>";
+		};
+		BABD34FE1BFB2B6A00BF4FE9 = {
+			isa = PBXGroup;
+			children = (
+				BA60471A1BFC6966003099AC /* BWJSONMatcher */,
+				BABD35091BFB2B6A00BF4FE9 /* BWJSONMatcher Demo */,
+				BABD35081BFB2B6A00BF4FE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BABD35081BFB2B6A00BF4FE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BABD35071BFB2B6A00BF4FE9 /* BWJSONMatcher Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BABD35091BFB2B6A00BF4FE9 /* BWJSONMatcher Demo */ = {
+			isa = PBXGroup;
+			children = (
+				BABD35331BFB302D00BF4FE9 /* ValueObjects */,
+				BABD350D1BFB2B6A00BF4FE9 /* AppDelegate.h */,
+				BABD350E1BFB2B6A00BF4FE9 /* AppDelegate.m */,
+				BA6047221BFC6DDC003099AC /* GoogleGroupController.h */,
+				BA6047231BFC6DDC003099AC /* GoogleGroupController.m */,
+				BABD35101BFB2B6A00BF4FE9 /* MainViewController.h */,
+				BABD35111BFB2B6A00BF4FE9 /* MainViewController.m */,
+				BABD352F1BFB2CED00BF4FE9 /* FacebookPage.json */,
+				BABD35311BFB2FBF00BF4FE9 /* GoogleGroups.json */,
+				BABD35131BFB2B6A00BF4FE9 /* Main.storyboard */,
+				BABD35161BFB2B6A00BF4FE9 /* Assets.xcassets */,
+				BABD35181BFB2B6A00BF4FE9 /* LaunchScreen.storyboard */,
+				BABD351B1BFB2B6A00BF4FE9 /* Info.plist */,
+				BABD350A1BFB2B6A00BF4FE9 /* Supporting Files */,
+			);
+			path = "BWJSONMatcher Demo";
+			sourceTree = "<group>";
+		};
+		BABD350A1BFB2B6A00BF4FE9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BABD350B1BFB2B6A00BF4FE9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BABD35331BFB302D00BF4FE9 /* ValueObjects */ = {
+			isa = PBXGroup;
+			children = (
+				BABD35341BFB306000BF4FE9 /* FacebookPageInfo.h */,
+				BABD35351BFB306000BF4FE9 /* FacebookPageInfo.m */,
+				BABD35371BFB307200BF4FE9 /* GoogleGroupInfo.h */,
+				BABD35381BFB307200BF4FE9 /* GoogleGroupInfo.m */,
+			);
+			path = ValueObjects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BABD35061BFB2B6A00BF4FE9 /* BWJSONMatcher Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BABD351E1BFB2B6A00BF4FE9 /* Build configuration list for PBXNativeTarget "BWJSONMatcher Demo" */;
+			buildPhases = (
+				BABD35031BFB2B6A00BF4FE9 /* Sources */,
+				BABD35041BFB2B6A00BF4FE9 /* Frameworks */,
+				BABD35051BFB2B6A00BF4FE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BWJSONMatcher Demo";
+			productName = "BWJSONMatcher Demo";
+			productReference = BABD35071BFB2B6A00BF4FE9 /* BWJSONMatcher Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BABD34FF1BFB2B6A00BF4FE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Burrows.Wang;
+				TargetAttributes = {
+					BABD35061BFB2B6A00BF4FE9 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = VSL3J44Q9H;
+					};
+				};
+			};
+			buildConfigurationList = BABD35021BFB2B6A00BF4FE9 /* Build configuration list for PBXProject "BWJSONMatcher Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BABD34FE1BFB2B6A00BF4FE9;
+			productRefGroup = BABD35081BFB2B6A00BF4FE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BABD35061BFB2B6A00BF4FE9 /* BWJSONMatcher Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BABD35051BFB2B6A00BF4FE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BABD35301BFB2CED00BF4FE9 /* FacebookPage.json in Resources */,
+				BABD351A1BFB2B6A00BF4FE9 /* LaunchScreen.storyboard in Resources */,
+				BABD35171BFB2B6A00BF4FE9 /* Assets.xcassets in Resources */,
+				BABD35151BFB2B6A00BF4FE9 /* Main.storyboard in Resources */,
+				BABD35321BFB2FBF00BF4FE9 /* GoogleGroups.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BABD35031BFB2B6A00BF4FE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA6047241BFC6DDC003099AC /* GoogleGroupController.m in Sources */,
+				BABD35361BFB306000BF4FE9 /* FacebookPageInfo.m in Sources */,
+				BABD35121BFB2B6A00BF4FE9 /* MainViewController.m in Sources */,
+				BABD350F1BFB2B6A00BF4FE9 /* AppDelegate.m in Sources */,
+				BA6047211BFC698A003099AC /* NSObject+BWJSONMatcher.m in Sources */,
+				BA6047201BFC698A003099AC /* BWJSONMatcher.m in Sources */,
+				BABD350C1BFB2B6A00BF4FE9 /* main.m in Sources */,
+				BABD35391BFB307200BF4FE9 /* GoogleGroupInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BABD35131BFB2B6A00BF4FE9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BABD35141BFB2B6A00BF4FE9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BABD35181BFB2B6A00BF4FE9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BABD35191BFB2B6A00BF4FE9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BABD351C1BFB2B6A00BF4FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BABD351D1BFB2B6A00BF4FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BABD351F1BFB2B6A00BF4FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "BWJSONMatcher Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.burrowswang.BWJSONMatcher-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BABD35201BFB2B6A00BF4FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "BWJSONMatcher Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.burrowswang.BWJSONMatcher-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BABD35021BFB2B6A00BF4FE9 /* Build configuration list for PBXProject "BWJSONMatcher Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BABD351C1BFB2B6A00BF4FE9 /* Debug */,
+				BABD351D1BFB2B6A00BF4FE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BABD351E1BFB2B6A00BF4FE9 /* Build configuration list for PBXNativeTarget "BWJSONMatcher Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BABD351F1BFB2B6A00BF4FE9 /* Debug */,
+				BABD35201BFB2B6A00BF4FE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BABD34FF1BFB2B6A00BF4FE9 /* Project object */;
+}
