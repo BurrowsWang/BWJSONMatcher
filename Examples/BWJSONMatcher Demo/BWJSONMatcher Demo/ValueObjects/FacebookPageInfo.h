@@ -6,8 +6,8 @@
 //  Copyright © 2015 Burrows.Wang. All rights reserved.
 //
 
-#import <BWJSONMatcher/BWJSONMatcher.h>
-#import <BWJSONMatcher/BWJSONValueObject.h>
+#import "BWJSONMatcher.h"
+#import "BWJSONValueObject.h"
 
 #import <Foundation/Foundation.h>
 
