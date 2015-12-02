@@ -5,7 +5,7 @@ BWJSONMatcher
 ![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellowgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-BWJSONMatcher is a lightweight library which helps you easily match a JSON string or JSON object up with your data model.
+BWJSONMatcher is a lightweight Objective-c library which helps you easily match a JSON data or JSON string or JSON object up with your data model.
 
 It provides:
 
