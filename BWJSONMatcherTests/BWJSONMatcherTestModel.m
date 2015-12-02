@@ -27,7 +27,7 @@
 @implementation TestModelA
 
 + (NSArray *)ignoredProperties {
-    return @[@"puinteger"];
+    return @[@"puint"];
 }
 
 - (Class)typeInProperty:(NSString *)property {

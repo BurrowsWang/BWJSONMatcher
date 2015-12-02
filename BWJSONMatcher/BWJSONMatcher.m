@@ -135,17 +135,25 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     // make sure the json string is valid and convertible
     if (!jsonString || classType == nil) return nil;
     
-    NSError *error = nil;
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    // convert json string to json object in Objective-c first
+    return [self matchJSONData:jsonData withClass:classType];
+}
+
++ (nullable id)matchJSONData:(NSData *)jsonData withClass:(__unsafe_unretained Class)classType {
+    // make sure the json data is valid and convertible
+    if (!jsonData || classType == nil) return nil;
+    
+    NSError *error = nil;
+    // convert json data to json object in Objective-c
     id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
     
     if (error) {
         NSLog(@"%@", [error localizedDescription]);
         
-        // unconvertible json string
+        // unconvertible json data
         return nil;
     } else {
+        // match the json object up with given classType
         return [self matchJSON:jsonObj withClass:classType];
     }
 }
@@ -446,7 +454,14 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     }
 }
 
-+ (nullable id)convertObjectToJSONString:(id)object {
++ (nullable NSString *)convertObjectToJSONString:(id)object {
+    NSData *jsonData = [self convertObjectToJSONData:object];
+    
+    // return a string with encoding utf-8
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
++ (nullable NSData *)convertObjectToJSONData:(id)object {
     // convert the object to an json object in Objective-c first
     id jsonObj = [self convertObjectToJSON:object];
     if (!jsonObj) {
@@ -459,10 +474,9 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     if (error) {
         NSLog(@"%@", [error localizedDescription]);
         
-        return @"";
+        return nil;
     } else {
-        // return a string with encoding utf-8
-        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return jsonData;
     }
 }
 

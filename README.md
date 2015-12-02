@@ -1,7 +1,7 @@
 BWJSONMatcher
 =========
 ![Platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
-![Pod Version](https://img.shields.io/badge/pod-v1.1.0-green.svg)
+![Pod Version](https://img.shields.io/badge/pod-v1.1.1-green.svg)
 ![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-yellowgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -9,7 +9,7 @@ BWJSONMatcher is a lightweight library which helps you easily match a JSON strin
 
 It provides:
 
-- A universal `JSON Matcher` that matches a JSON string or JSON object up with your data model
+- A universal `JSON Matcher` that matches a JSON data or JSON string or JSON object up with your data model
 - A `catalog` based on `NSObject`, helps you easily transform JSON with any object
 - Three `protocols`, to which your data model should conforms
 
@@ -24,6 +24,10 @@ API documentation is available at [CocoaDocs - BWJSONMatcher](http://cocoadocs.o
 #import "NSObject+BWJSONMatcher.h"
 
 ...
+// convert json data to data model
+NSData *jsonData = your-json-bytes;
+YourValueObject *dataModel = [YourValueObject fromJSONData:jsonData];
+
 // convert json string to data model
 NSString *jsonString = @"{your-json-string}";
 YourValueObject *dataModel = [YourValueObject fromJSONString:jsonString];
@@ -35,6 +39,8 @@ YourValueObject *dataModel = [YourValueObject fromJSONObject:jsonObject];
 ...
 YourValueObject *dataModel = instance-of-your-value-object;
 
+// convert data model to json data
+NSData *jsonData = [dataModel toJSONData];
 // convert data model to json string
 NSString *jsonString = [dataModel toJSONString];
 // convert data model to json object
@@ -93,7 +99,7 @@ Installation
 ```ruby
 platform :ios, '6.0'
 
-pod 'BWJSONMatcher', '~>1.1.0'
+pod 'BWJSONMatcher', '~>1.1.1'
 ```
 
 ### Installation with Carthage (iOS 8+)

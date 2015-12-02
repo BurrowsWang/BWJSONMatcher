@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         	= "BWJSONMatcher"
-  s.version      	= "1.1.0"
-  s.summary      	= "BWJSONMatcher helps you easily match a JSON string or JSON object up with your data model"
+  s.version      	= "1.1.1"
+  s.summary      	= "BWJSONMatcher helps you easily match a JSON data or JSON string or JSON object up with your data model"
   s.homepage     	= "https://github.com/BurrowsWang/BWJSONMatcher"
   s.license      	= { :type => 'MIT' }
   s.author       	= { "BurrowsWang" => "burrowswang@gmail.com" }

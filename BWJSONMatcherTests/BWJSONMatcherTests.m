@@ -51,12 +51,13 @@
 
 - (void)testModelFromJSONString {
     NSString *jsonString = [self.dictionaryA toJSONString];
-    NSLog(@"%@", jsonString);
-    
     TestModelA *dataModelA = [TestModelA fromJSONString:jsonString];
     
     XCTAssertEqual(dataModelA.pint, kDataInt, @"pint error");
-    XCTAssertEqual(dataModelA.puint, kDataUint, @"puint error");
+    
+    // this property has been ignored in the implementation of TestModelA
+    XCTAssertNotEqual(dataModelA.puint, kDataUint, @"puint error");
+    
     XCTAssertEqual(dataModelA.pshort, kDataShort, @"pshort error");
     
     // can't pass this assert here, we will lose accuracy when using float
@@ -71,10 +72,8 @@
     XCTAssertEqual(dataModelA.pinteger, kDataInteger, @"pinteger error");
     XCTAssertEqual(dataModelA.puinteger, kDataUinteger, @"puinteger error");
     
-    NSLog(@"%@", dataModelA.pdictionary);
     XCTAssert([dataModelA.pdictionary[@"keyB"][@"bp2"][0][@"cp2"][@"dp"] isEqualToString:kDataString], @"pdictionary error");
     
-    NSLog(@"%@", dataModelA.parray);
     TestModelB *modelB = dataModelA.parray[2];
     TestModelC *modelC = modelB.bp2[0];
     XCTAssert([modelC.cp2.dp isEqualToString:kDataString], @"parray error");
@@ -97,7 +96,6 @@
 
 - (void)testMutualConvert {
     NSString *jsonString = [self.dictionaryA toJSONString];
-    NSLog(@"%@", jsonString);
     
     TestModelA *dataModelA1 = [TestModelA fromJSONString:jsonString];
     NSString *middleString = [dataModelA1 toJSONString];
@@ -105,6 +103,17 @@
     TestModelA *dataModelA2 = [TestModelA fromJSONString:middleString];
     
     XCTAssertEqualObjects(dataModelA1, dataModelA2, @"mutual match error");
+}
+
+- (void)testConvertWithData {
+    NSData *jsonData = [self.dictionaryA toJSONData];
+    
+    TestModelA *dataModelA1 = [TestModelA fromJSONData:jsonData];
+    NSData *middleData = [dataModelA1 toJSONData];
+
+    TestModelA *dataModelA2 = [TestModelA fromJSONData:middleData];
+    
+    XCTAssertEqualObjects(dataModelA1, dataModelA2, @"mutual data match error");
 }
 
 - (void)testMonkeyActivity {
@@ -129,8 +138,7 @@
     
     TestModelA *monkeyModelA = [TestModelA fromJSONObject:monkeyDictionary];
     NSString *monkeyJSONString = [monkeyModelA toJSONString];
-    NSLog(@"%@", monkeyJSONString);
-    
+
     XCTAssert(YES, @"no crash is good performance");
 }
 

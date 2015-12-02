@@ -42,6 +42,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)toJSONString;
 
 /*!
+ * Convert receiver to a json data
+ * @return JSON data that represents this receiver
+ */
+- (NSData *)toJSONData;
+
+/*!
  * Parse a json object, convert it to an instance of receiver class
  * @param jsonObject json object you want to parse
  * @return A brand new instance of this class
@@ -54,6 +60,13 @@ NS_ASSUME_NONNULL_BEGIN
  * @return A brand new instance of this class
  */
 + (nullable instancetype)fromJSONString:(NSString *)jsonString;
+
+/*!
+ * Parse a json data, convert it to an instance of receiver class
+ * @param jsonData json data you want to parse
+ * @return A brand new instance of this class
+ */
++ (nullable instancetype)fromJSONData:(NSData *)jsonData;
 
 @end
 

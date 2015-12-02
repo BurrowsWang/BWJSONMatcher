@@ -50,14 +50,27 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
 
 /*!
  * Convert a json string to an object of the given class type. If the json string is array style e.g. '[...]',
-           an instance of NSArray contains instances of given class will be returned.
-           Otherwise, an instance of given class will be returned.
+ * an instance of NSArray containing instances of given class will be returned.
+ * Otherwise, an instance of given class will be returned.
+ *
  * @param jsonString The json string, both object style e.g. '{...}' and array style e.g. '[...]' are acceptable
  * @param classType If the json string is array style e.g. '[...]', classType indicates the object inside json array.
-                    If the json string is object style e.g. '{...}', classType indicates the class type that matched this json string
+                    If the json string is object style e.g. '{...}', classType indicates the class type that matches this json string
  * @return A converted data model of the given class or NSArray or nil if any parameter is invalid
  */
 + (nullable id)matchJSONString:(NSString *)jsonString withClass:(__unsafe_unretained Class)classType;
+
+/*!
+ * Convert a json data to an object of the given class type. If the json data is array style,
+ * an instance of NSArray containing instances of given class will be returned.
+ * Otherwise, an instance of given class will be returned.
+ *
+ * @param jsonData The json data, both object style and array style are acceptable
+ * @param classType If the json data is array style, classType indicates the object inside json array.
+                    If the json data is object style, classType indicates the class type that matches this json data
+ * @return A converted data model of the given class or NSArray or nil if any parameter is invalid
+ */
++ (nullable id)matchJSONData:(NSData *)jsonData withClass:(__unsafe_unretained Class)classType;
 
 /*!
  * Convert a data model to json object
@@ -71,7 +84,14 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
  * @param object The object you want to convert
  * @return A json string representing the object you passed in, could be object style or array style depending on the parameter you passed
  */
-+ (nullable id)convertObjectToJSONString:(id)object;
++ (nullable NSString *)convertObjectToJSONString:(id)object;
+
+/*!
+ * Convert a data model to json data
+ * @param object The object you want to convert
+ * @return A json data representing the object you passed in
+ */
++ (nullable NSData *)convertObjectToJSONData:(id)object;
 
 @end
 

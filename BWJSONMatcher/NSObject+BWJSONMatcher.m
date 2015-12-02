@@ -37,12 +37,20 @@
     return [BWJSONMatcher convertObjectToJSONString:self];
 }
 
+- (NSData *)toJSONData {
+    return [BWJSONMatcher convertObjectToJSONData:self];
+}
+
 + (nullable instancetype)fromJSONObject:(id)jsonObject {
     return [BWJSONMatcher matchJSON:jsonObject withClass:[self class]];
 }
 
 + (nullable instancetype)fromJSONString:(NSString *)jsonString {
     return [BWJSONMatcher matchJSONString:jsonString withClass:[self class]];
+}
+
++ (nullable instancetype)fromJSONData:(NSData *)jsonData {
+    return [BWJSONMatcher matchJSONData:jsonData withClass:[self class]];
 }
 
 @end
