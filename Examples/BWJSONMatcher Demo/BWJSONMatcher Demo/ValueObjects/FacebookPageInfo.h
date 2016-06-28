@@ -14,33 +14,35 @@
 @class FacebookLocationInfo;
 @class FacebookParkingInfo;
 
-@interface FacebookPageInfo : NSObject <BWJSONHasArrayProperties>
+@interface FacebookPageInfo : NSObject <BWJSONHasArrayProperties, BWJSONHasToAmendProperties>
 
-@property (nonatomic, strong) NSString                      *about;
-@property (nonatomic, strong) FacebookLocationInfo          *location;
-@property (nonatomic, strong) FacebookParkingInfo           *parking;
-@property (nonatomic, strong) NSArray                       *emails;
-@property (nonatomic, strong) NSString                      *website;
-@property (nonatomic, strong) NSString                      *id;
+@property (nonatomic, copy) NSString                *about;
+@property (nonatomic, strong) FacebookLocationInfo  *location;
+@property (nonatomic, strong) FacebookParkingInfo   *parking;
+@property (nonatomic, copy) NSArray                 *emails;
+@property (nonatomic, copy) NSString                *website;
+//@property (nonatomic, copy) NSString                *id;
+
+@property (nonatomic, assign) NSInteger             pageId;
 
 @end
 
 @interface FacebookLocationInfo : NSObject <BWJSONHasToAmendProperties>
 
-@property (nonatomic, strong) NSString                      *city;
-@property (nonatomic, strong) NSString                      *country;
-@property (nonatomic, assign) double                        latitude;
-@property (nonatomic, assign) double                        longitude;
-@property (nonatomic, strong) NSString                      *state;
-@property (nonatomic, strong) NSString                      *street;
-@property (nonatomic, strong) NSString                      *zip;
+@property (nonatomic, copy) NSString                *city;
+@property (nonatomic, copy) NSString                *country;
+@property (nonatomic, assign) double                latitude;
+@property (nonatomic, assign) double                longitude;
+@property (nonatomic, copy) NSString                *state;
+@property (nonatomic, copy) NSString                *street;
+@property (nonatomic, copy) NSString                *zip;
 
 @end
 
 @interface FacebookParkingInfo : NSObject <BWJSONHasIgnoredProperties>
 
-@property (nonatomic, assign) BOOL                          lot;
-@property (nonatomic, assign) BOOL                          street;
-@property (nonatomic, assign) BOOL                          valet;
+@property (nonatomic, assign) BOOL                  lot;
+@property (nonatomic, assign) BOOL                  street;
+@property (nonatomic, assign) BOOL                  valet;
 
 @end

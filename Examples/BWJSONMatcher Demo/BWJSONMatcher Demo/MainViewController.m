@@ -17,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UILabel            *locationLabel;
 @property (nonatomic, weak) IBOutlet UISwitch           *parkingLotSwitch;
 @property (nonatomic, weak) IBOutlet UILabel            *emailsLabel;
+@property (nonatomic, weak) IBOutlet UILabel            *idLabel;
 
 @end
 
@@ -33,12 +34,8 @@
                                pageInfo.location.city,
                                pageInfo.location.zip];
     self.parkingLotSwitch.on = pageInfo.parking.lot;
-    
-    NSMutableString *emails  = [[NSMutableString alloc] init];
-    for (NSString *emailAddress in pageInfo.emails) {
-        [emails appendFormat:@"%@\n", emailAddress];
-    }
-    self.emailsLabel.text = emails;
+    self.emailsLabel.text = [pageInfo.emails componentsJoinedByString:@"\n"];
+    self.idLabel.text = [NSString stringWithFormat:@"Id: %ld", (long)pageInfo.pageId];
 }
 
 - (void)didReceiveMemoryWarning {

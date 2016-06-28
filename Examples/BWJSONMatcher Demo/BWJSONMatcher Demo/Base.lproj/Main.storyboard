@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2e7-yO-njb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2e7-yO-njb">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -19,58 +19,55 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yls-6V-bRs">
                                 <rect key="frame" x="20" y="84" width="280" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-EQ-a0R">
                                 <rect key="frame" x="20" y="120" width="280" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking lot:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1i-xs-qNE">
                                 <rect key="frame" x="20" y="156" width="86" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFW-Gq-41I">
                                 <rect key="frame" x="114" y="151" width="51" height="31"/>
-                                <animations/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GU-6Q-cKV">
                                 <rect key="frame" x="20" y="192" width="280" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try to modify the json data in FacebookPage.json, see what happens" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWW-u7-83o">
                                 <rect key="frame" x="20" y="519" width="280" height="29"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbb-xI-BFM">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izp-VM-f2V">
                                 <rect key="frame" x="93" y="481" width="135" height="30"/>
-                                <animations/>
                                 <state key="normal" title="JSON Array Sample"/>
                                 <connections>
                                     <segue destination="Ai6-kj-PRd" kind="push" id="3om-vj-kyU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Gy-lE-cc4">
+                                <rect key="frame" x="20" y="228" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uFW-Gq-41I" firstAttribute="leading" secondItem="o1i-xs-qNE" secondAttribute="trailing" constant="8" id="47w-DU-sUq"/>
@@ -83,11 +80,14 @@
                             <constraint firstItem="Yls-6V-bRs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ubh-jO-coR"/>
                             <constraint firstItem="0GU-6Q-cKV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VCH-Nj-Ajo"/>
                             <constraint firstItem="0GU-6Q-cKV" firstAttribute="top" secondItem="o1i-xs-qNE" secondAttribute="bottom" constant="15" id="Y4R-cJ-gbR"/>
+                            <constraint firstItem="2Gy-lE-cc4" firstAttribute="top" secondItem="0GU-6Q-cKV" secondAttribute="bottom" constant="15" id="aoC-b0-3Bs"/>
                             <constraint firstAttribute="trailing" secondItem="Yls-6V-bRs" secondAttribute="trailing" constant="20" id="cb6-yd-cml"/>
                             <constraint firstItem="VEN-EQ-a0R" firstAttribute="top" secondItem="Yls-6V-bRs" secondAttribute="bottom" constant="15" id="dbM-2s-Sc6"/>
                             <constraint firstItem="oWW-u7-83o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="e8g-lX-gdw"/>
                             <constraint firstAttribute="trailing" secondItem="oWW-u7-83o" secondAttribute="trailing" constant="20" id="eLg-IL-qKZ"/>
+                            <constraint firstItem="2Gy-lE-cc4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hcH-7B-YZj"/>
                             <constraint firstItem="o1i-xs-qNE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ksT-ht-GEN"/>
+                            <constraint firstAttribute="trailing" secondItem="2Gy-lE-cc4" secondAttribute="trailing" constant="20" id="m8n-Vo-giu"/>
                             <constraint firstItem="oWW-u7-83o" firstAttribute="top" secondItem="Izp-VM-f2V" secondAttribute="bottom" constant="8" id="r28-al-L56"/>
                             <constraint firstItem="VEN-EQ-a0R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="rx6-Sr-mbo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oWW-u7-83o" secondAttribute="bottom" constant="20" id="t4S-H9-GYK"/>
@@ -97,6 +97,7 @@
                     <connections>
                         <outlet property="aboutLabel" destination="Yls-6V-bRs" id="4VH-aJ-ueY"/>
                         <outlet property="emailsLabel" destination="0GU-6Q-cKV" id="hN7-PJ-22e"/>
+                        <outlet property="idLabel" destination="2Gy-lE-cc4" id="7s2-bH-ZSI"/>
                         <outlet property="locationLabel" destination="VEN-EQ-a0R" id="V7W-kq-lQI"/>
                         <outlet property="parkingLotSwitch" destination="uFW-Gq-41I" id="Zgd-6R-cpA"/>
                     </connections>
@@ -112,7 +113,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kt9-5u-ZOS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3lk-uQ-z4C"/>
@@ -129,7 +129,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SnV-5D-n1O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <outlet property="dataSource" destination="Ai6-kj-PRd" id="JEh-r5-Vz0"/>

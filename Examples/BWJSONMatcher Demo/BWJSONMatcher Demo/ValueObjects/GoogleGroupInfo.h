@@ -6,12 +6,14 @@
 //  Copyright © 2015 Burrows.Wang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BWJSONValueObject.h"
 
-@interface GoogleGroupInfo : NSObject
+@interface GoogleGroupInfo : NSObject <BWJSONHasToAmendProperties>
 
-@property (nonatomic, strong) NSString                      *firstname;
-@property (nonatomic, strong) NSString                      *lastname;
-@property (nonatomic, strong) NSString                      *email;
+@property (nonatomic, copy) NSString                *firstname;
+@property (nonatomic, copy) NSString                *lastname;
+@property (nonatomic, copy) NSString                *email;
+
+@property (nonatomic, copy) NSString                *userDescription;
 
 @end

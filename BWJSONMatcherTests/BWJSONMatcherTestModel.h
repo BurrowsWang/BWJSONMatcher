@@ -35,31 +35,34 @@
 @property (nonatomic, assign) unsigned long long    pulonglong;
 @property (nonatomic, assign) NSInteger             pinteger;
 @property (nonatomic, assign) NSUInteger            puinteger;
-@property (nonatomic, strong) NSDictionary          *pdictionary;
-@property (nonatomic, strong) NSArray               *parray;
-@property (nonatomic, strong) NSString              *pstring;
+@property (nonatomic, copy) NSDictionary            *pdictionary;
+@property (nonatomic, copy) NSArray                 *parray;
+@property (nonatomic, copy) NSString                *pstring;
 @property (nonatomic, strong) NSDecimalNumber       *pdecimalnumber;
 @property (nonatomic, strong) NSNumber              *pnumber;
 @property (nonatomic, strong) TestModelC            *pmodelc;
+
+@property (nonatomic, assign) NSInteger             forId;
+@property (nonatomic, copy) NSString                *forDescription;
 
 @end
 
 @interface TestModelB : TestModelBase <BWJSONHasArrayProperties>
 
-@property (nonatomic, strong) NSString              *bp1;
-@property (nonatomic, strong) NSArray               *bp2;
+@property (nonatomic, copy) NSString                *bp1;
+@property (nonatomic, copy) NSArray                 *bp2;
 
 @end
 
 @interface TestModelC : NSObject
 
-@property (nonatomic, strong) NSString              *cp1;
+@property (nonatomic, copy) NSString                *cp1;
 @property (nonatomic, strong) TestModelD            *cp2;
 
 @end
 
 @interface TestModelD : NSObject
 
-@property (nonatomic, strong) NSString              *dp;
+@property (nonatomic, copy) NSString                *dp;
 
 @end

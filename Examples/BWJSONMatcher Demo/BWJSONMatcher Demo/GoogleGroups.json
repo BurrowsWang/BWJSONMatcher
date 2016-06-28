@@ -2,26 +2,31 @@
   {
   "firstname": "Kassie",
   "lastname": "Hilgert",
-  "email": "kassie@gmail.com"
+  "email": "kassie@gmail.com",
+  "description": "Kassie Akan Hilgert"
   },
   {
   "firstname": "Joann",
   "lastname": "Ring",
-  "email": "joann@gmail.com"
+  "email": "joann@gmail.com",
+  "description": "Joann Blala Ring"
   },
   {
   "firstname": "Walter",
   "lastname": "Keiper",
-  "email": "walter@gmail.com"
+  "email": "walter@gmail.com",
+  "description": "Walter Candy Keiper"
   },
   {
   "firstname": "Ron",
   "lastname": "Unger",
-  "email": "ron@gmail.com"
+  "email": "ron@gmail.com",
+  "description": "Ron David Unger"
   },
   {
   "firstname": "Barbara",
   "lastname": "Lesko",
-  "email": "barbara@gmail.com"
+  "email": "barbara@gmail.com",
+  "description": "Barbara Elf Lesko"
   }
   ]

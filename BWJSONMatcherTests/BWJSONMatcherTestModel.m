@@ -38,8 +38,11 @@
     return nil;
 }
 
-- (void)matchDidFinish {
+- (void)matchDidFinish:(NSDictionary *)jsonDictionary {
     self.puinteger = ABS(self.pinteger);
+    
+    self.forId = [jsonDictionary[@"id"] integerValue];
+    self.forDescription = jsonDictionary[@"description"];
 }
 
 - (BOOL)isEqual:(id)object {

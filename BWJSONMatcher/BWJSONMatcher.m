@@ -39,7 +39,7 @@ static NSString* const kTypeNSValue             = @"NSValue";
 static NSString* const kGetTypeInArray          = @"typeInProperty:";
 static NSString* const kGetTypeInArrayLower     = @"typeinproperty:";   // in case of spelling mistake
 static NSString* const kGetTypeInArrayUpper     = @"TYPEINPROPERTY:";   // in case of spelling mistake
-static NSString* const kMatchDidFinish          = @"matchDidFinish";
+static NSString* const kMatchDidFinish          = @"matchDidFinish:";
 
 #pragma mark - Global Methods
 
@@ -123,7 +123,7 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
         if (result && [result respondsToSelector:matchDidFinish]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [result performSelector:matchDidFinish];
+            [result performSelector:matchDidFinish withObject:json];
 #pragma clang diagnostic pop
         }
         

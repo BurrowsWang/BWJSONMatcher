@@ -82,6 +82,9 @@
     XCTAssertEqualObjects(dataModelA.pdecimalnumber, kDataDecimal, @"pdecimalnumber error");
     XCTAssertEqualObjects(dataModelA.pnumber, kDataNumber, @"pnumber error");
     XCTAssert([dataModelA.pmodelc.cp2.dp isEqualToString:kDataString], @"pmodelc error");
+    
+    XCTAssertEqual(dataModelA.forId, kDataUint, @"forId error");
+    XCTAssert([dataModelA.forDescription isEqualToString:kDataString], @"forDescription error");
 }
 
 - (void)testArrayFromJSONArray {
@@ -137,7 +140,7 @@
                                        @"pmodelc": kDataString};
     
     TestModelA *monkeyModelA = [TestModelA fromJSONObject:monkeyDictionary];
-    NSString *monkeyJSONString = [monkeyModelA toJSONString];
+    __unused NSString *monkeyJSONString = [monkeyModelA toJSONString];
 
     XCTAssert(YES, @"no crash is good performance");
 }
@@ -148,7 +151,7 @@
     
     [self measureBlock:^{
         while (totalCount > 0) {
-            TestModelA *modelA = [TestModelA fromJSONString:jsonString];
+            __unused TestModelA *modelA = [TestModelA fromJSONString:jsonString];
             
             totalCount--;
         }
@@ -184,7 +187,9 @@
              @"pstring": kDataString,
              @"pdecimalnumber": kDataDecimal,
              @"pnumber": kDataNumber,
-             @"pmodelc": dictionaryC1};
+             @"pmodelc": dictionaryC1,
+             @"id": @(kDataUint),
+             @"description": kDataString};
 }
 
 - (NSDictionary *)makeDictionaryB {

@@ -13,7 +13,7 @@
 
 @interface GoogleGroupController ()
 
-@property (nonatomic, strong) NSArray           *dataSource;
+@property (nonatomic, copy) NSArray             *dataSource;
 
 @end
 

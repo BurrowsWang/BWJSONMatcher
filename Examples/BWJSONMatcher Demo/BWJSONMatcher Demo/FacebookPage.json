@@ -10,7 +10,7 @@
         "zip": "94025"
     },
     "parking": {
-        "lot": 0,
+        "lot": true,
         "street": 0,
         "valet": 0
     },

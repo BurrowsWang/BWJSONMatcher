@@ -18,11 +18,15 @@
     return nil;
 }
 
+- (void)matchDidFinish:(NSDictionary *)jsonDictionary {
+    self.pageId = [jsonDictionary[@"id"] integerValue];
+}
+
 @end
 
 @implementation FacebookLocationInfo
 
-- (void)matchDidFinish {
+- (void)matchDidFinish:(NSDictionary *)jsonDictionary {
     self.zip = [NSString stringWithFormat:@"%@: %@", self.country, self.zip];
 }
 

@@ -1,7 +1,7 @@
 BWJSONMatcher
 =========
 ![Platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
-![Pod Version](https://img.shields.io/badge/pod-v1.1.1-brightgreen.svg)
+![Pod Version](https://img.shields.io/badge/pod-v1.1.2-brightgreen.svg)
 ![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -99,7 +99,7 @@ Installation
 ```ruby
 platform :ios, '6.0'
 
-pod 'BWJSONMatcher', '~>1.1.1'
+pod 'BWJSONMatcher', '~>1.1.2'
 ```
 
 ### Installation with Carthage (iOS 8+)

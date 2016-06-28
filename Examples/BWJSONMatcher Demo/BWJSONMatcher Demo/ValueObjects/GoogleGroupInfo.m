@@ -10,4 +10,8 @@
 
 @implementation GoogleGroupInfo
 
+- (void)matchDidFinish:(NSDictionary *)jsonDictionary {
+    self.userDescription = jsonDictionary[@"description"];
+}
+
 @end

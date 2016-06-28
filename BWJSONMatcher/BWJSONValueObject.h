@@ -82,8 +82,9 @@ NS_ASSUME_NONNULL_BEGIN
  * You should never call this method directly. This method will be invoked automatically after all
  * properties have been matched. If you have to prune or amend some values of your json object
  * according to the business logic, place the code here
+ * @param jsonDictionary The json dictionary which this value object was matched from
  */
-- (void)matchDidFinish;
+- (void)matchDidFinish:(NSDictionary *)jsonDictionary;
 
 @end
 
@@ -114,8 +115,9 @@ __deprecated_msg("Use BWJSONHasArrayProperties, BWJSONHasIgnoredProperties and B
  * You should never call this method directly. This method will be invoked automatically after all 
  * properties have been matched. If you have to prune or amend some values of your json object
  * according to the business logic, place the code here
+ * @param jsonDictionary The json dictionary which this value object was matched from
  */
-- (void)matchDidFinish;
+- (void)matchDidFinish:(NSDictionary *)jsonDictionary;
 
 /*!
  * In some cases, there will be certain properties which don't need to be extracted from json data.
