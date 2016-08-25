@@ -16,8 +16,9 @@
 @class TestModelC;
 @class TestModelD;
 
-@interface TestModelBase : NSObject
+@interface TestModelBase : NSObject <BWJSONHasToMapProperty>
 
+@property (nonatomic, assign) NSInteger             objectId; // map to id
 @property (nonatomic, assign) BOOL                  pbool;
 
 @end
@@ -47,8 +48,9 @@
 
 @end
 
-@interface TestModelB : TestModelBase <BWJSONHasArrayProperties>
+@interface TestModelB : TestModelBase <BWJSONHasArrayProperties, BWJSONHasToMapProperty>
 
+@property (nonatomic, assign) BOOL                  couple; // map to double
 @property (nonatomic, copy) NSString                *bp1;
 @property (nonatomic, copy) NSArray                 *bp2;
 

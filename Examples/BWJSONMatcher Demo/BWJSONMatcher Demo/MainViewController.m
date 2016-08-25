@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UISwitch           *parkingLotSwitch;
 @property (nonatomic, weak) IBOutlet UILabel            *emailsLabel;
 @property (nonatomic, weak) IBOutlet UILabel            *idLabel;
+@property (nonatomic, weak) IBOutlet UISwitch           *voidSwitch;
 
 @end
 
@@ -36,6 +37,7 @@
     self.parkingLotSwitch.on = pageInfo.parking.lot;
     self.emailsLabel.text = [pageInfo.emails componentsJoinedByString:@"\n"];
     self.idLabel.text = [NSString stringWithFormat:@"Id: %ld", (long)pageInfo.pageId];
+    self.voidSwitch.on = pageInfo.location.empty;
 }
 
 - (void)didReceiveMemoryWarning {

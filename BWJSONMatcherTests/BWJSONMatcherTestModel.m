@@ -22,6 +22,10 @@
     return NO;
 }
 
++ (NSDictionary *)propertyMapper {
+    return @{@"objectId": @"id"};
+}
+
 @end
 
 @implementation TestModelA
@@ -41,7 +45,7 @@
 - (void)matchDidFinish:(NSDictionary *)jsonDictionary {
     self.puinteger = ABS(self.pinteger);
     
-    self.forId = [jsonDictionary[@"id"] integerValue];
+    self.forId = [[jsonDictionary[@"id"] description] integerValue];
     self.forDescription = jsonDictionary[@"description"];
 }
 
@@ -84,6 +88,10 @@
     }
     
     return nil;
+}
+
++ (NSDictionary *)propertyMapper {
+    return @{@"couple": @"double"};
 }
 
 - (BOOL)isEqual:(id)object {

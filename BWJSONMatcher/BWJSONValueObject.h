@@ -89,6 +89,29 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+#pragma mark - BWJSONHasToMapProperty
+
+/*!
+ * The protocol indicates that some properties need to be renamed when being matched from JSON dictionary.
+ */
+@protocol BWJSONHasToMapProperty <NSObject>
+
+@required
+
+/*!
+ * If you do not like the property name in corresponding JSON dictionary, wanna give a more resonable,
+ * more consistent name? Provide a property name mapper here.
+ * IMPORTANT: The keys of the mapper are the property names you choose in you value object,
+ * and the values of the mapper are the corresponding names in JSON dictionary.
+ * For example: given a json string like "{"id": 31415926, "double": true}", you can declare
+ * a value object with properties "userId" "couple", and provide a property mapper @{@"userId": @"id", @"couple": @"double"}
+ * @return Property name mapper, map the property names in this value object to those in corresponding JSON dictionary.
+ */
++ (NSDictionary *)propertyMapper;
+
+@end
+
+
 #pragma mark - BWJSONValueObject (Deprecated)
 
 /*!
@@ -98,7 +121,6 @@ NS_ASSUME_NONNULL_BEGIN
  * This protocol have been deprecated since version 1.1.0 and will be removed in a later release.
  * Please use BWJSONHasArrayProperties, BWJSONHasIgnoredProperties and BWJSONHasToAmendProperties instead.
  */
-__deprecated_msg("Use BWJSONHasArrayProperties, BWJSONHasIgnoredProperties and BWJSONHasToAmendProperties instead.")
 @protocol BWJSONValueObject <NSObject>
 
 @optional
@@ -125,6 +147,17 @@ __deprecated_msg("Use BWJSONHasArrayProperties, BWJSONHasIgnoredProperties and B
  * @return An array that contains all property name you want to ignore
  */
 + (NSArray *)ignoredProperties;
+
+/*!
+ * If you do not like the property name in corresponding JSON dictionary, wanna give a more resonable,
+ * more consistent name? Provide a property name mapper here.
+ * IMPORTANT: The keys of the mapper are the property names you choose in you value object,
+ * and the values of the mapper are the corresponding names in JSON dictionary.
+ * For example: given a json string like "{"id": 31415926, "double": true}", you can declare
+ * a value object with properties "userId" "couple", and provide a property mapper @{@"userId": @"id", @"couple": @"double"}
+ * @return Property name mapper, map the property names in this value object to those in corresponding JSON dictionary.
+ */
++ (NSDictionary *)propertyMapper;
 
 @end
 

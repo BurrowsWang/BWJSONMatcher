@@ -27,7 +27,7 @@
 
 @end
 
-@interface FacebookLocationInfo : NSObject <BWJSONHasToAmendProperties>
+@interface FacebookLocationInfo : NSObject <BWJSONHasToAmendProperties, BWJSONHasToMapProperty>
 
 @property (nonatomic, copy) NSString                *city;
 @property (nonatomic, copy) NSString                *country;
@@ -36,6 +36,7 @@
 @property (nonatomic, copy) NSString                *state;
 @property (nonatomic, copy) NSString                *street;
 @property (nonatomic, copy) NSString                *zip;
+@property (nonatomic, assign) BOOL                  empty;
 
 @end
 

@@ -53,6 +53,7 @@
     NSString *jsonString = [self.dictionaryA toJSONString];
     TestModelA *dataModelA = [TestModelA fromJSONString:jsonString];
     
+    XCTAssertEqual(dataModelA.objectId, kDataUint, @"property map error");
     XCTAssertEqual(dataModelA.pint, kDataInt, @"pint error");
     
     // this property has been ignored in the implementation of TestModelA
@@ -75,6 +76,8 @@
     XCTAssert([dataModelA.pdictionary[@"keyB"][@"bp2"][0][@"cp2"][@"dp"] isEqualToString:kDataString], @"pdictionary error");
     
     TestModelB *modelB = dataModelA.parray[2];
+    XCTAssertTrue(modelB.couple, @"property mapper inherit error");
+    
     TestModelC *modelC = modelB.bp2[0];
     XCTAssert([modelC.cp2.dp isEqualToString:kDataString], @"parray error");
     
@@ -120,7 +123,8 @@
 }
 
 - (void)testMonkeyActivity {
-    NSDictionary *monkeyDictionary = @{@"pbool": @"true",
+    NSDictionary *monkeyDictionary = @{@"id": @{@"monkey": @"monkey"},
+                                       @"pbool": @"true",
                                        @"pint": @"314159265358979323846264338327",
                                        @"puint": @(-128),
                                        @"pshort": @{@"test": @"monkey"},
@@ -198,7 +202,8 @@
     NSDictionary *dictionaryC3 = [self makeDictionaryC];
     
     return @{@"bp1": kDataString,
-             @"bp2": @[dictionaryC1, dictionaryC2, dictionaryC3]};
+             @"bp2": @[dictionaryC1, dictionaryC2, dictionaryC3],
+             @"double": @(YES)};
 }
 
 - (NSDictionary *)makeDictionaryC {

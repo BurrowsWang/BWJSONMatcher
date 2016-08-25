@@ -52,7 +52,7 @@
     
     GoogleGroupInfo *groupInfo = self.dataSource[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", groupInfo.firstname, groupInfo.lastname];
-    cell.detailTextLabel.text = groupInfo.email;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d | %@", (int)groupInfo.userId, groupInfo.email];
     
     return cell;
 }

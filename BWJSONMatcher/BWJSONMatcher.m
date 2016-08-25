@@ -37,9 +37,9 @@ static NSString* const kTypeNSData              = @"NSData";
 static NSString* const kTypeNSValue             = @"NSValue";
 
 static NSString* const kGetTypeInArray          = @"typeInProperty:";
-static NSString* const kGetTypeInArrayLower     = @"typeinproperty:";   // in case of spelling mistake
-static NSString* const kGetTypeInArrayUpper     = @"TYPEINPROPERTY:";   // in case of spelling mistake
 static NSString* const kMatchDidFinish          = @"matchDidFinish:";
+static NSString* const kIgnoredProperties       = @"ignoredProperties";
+static NSString* const kPropertyMapper          = @"propertyMapper";
 
 #pragma mark - Global Methods
 
@@ -196,7 +196,7 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     
     // check if there are some properties of this classType need to be ignored
     NSArray *ignoredProperties = nil;
-    SEL ignoredPropertiesSelector = NSSelectorFromString(@"ignoredProperties");
+    SEL ignoredPropertiesSelector = NSSelectorFromString(kIgnoredProperties);
     if ([classType respondsToSelector:ignoredPropertiesSelector]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -204,6 +204,20 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
         
         if ([propertyArray isKindOfClass:[NSArray class]] && [propertyArray count] > 0) {
             ignoredProperties = propertyArray;
+        }
+#pragma clang diagnostic pop
+    }
+    
+    // check if there are some property names of this classType need to be mapped to other names
+    NSDictionary *propertyMapper = nil;
+    SEL propertyMapperSelector = NSSelectorFromString(kPropertyMapper);
+    if ([classType respondsToSelector:propertyMapperSelector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        NSDictionary *mapperDictionary = [classType performSelector:propertyMapperSelector];
+        
+        if ([mapperDictionary isKindOfClass:[NSDictionary class]] && [mapperDictionary count] > 0) {
+            propertyMapper = mapperDictionary;
         }
 #pragma clang diagnostic pop
     }
@@ -222,15 +236,24 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
                 continue;
             }
             
-            // check if the json object has this property or not
+            // get the name of this property
             NSString *propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
-            id rawValue = [json valueForKey:propertyName];
-            if (isNullValue(rawValue)) {
-                continue;
-            }
             
             // check if we should ignore this property
             if (ignoredProperties && [ignoredProperties containsObject:propertyName]) {
+                continue;
+            }
+            
+            // check if this property name should be mapped to another name in json dictionary
+            id rawValue = nil;
+            if (propertyMapper && propertyMapper[propertyName]) {
+                rawValue = [json valueForKey:propertyMapper[propertyName]];
+            } else {
+                rawValue = [json valueForKey:propertyName];
+            }
+            
+            // check if the json object has this property or not
+            if (isNullValue(rawValue)) {
                 continue;
             }
             
@@ -257,16 +280,10 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                     SEL typeSelector = NSSelectorFromString(kGetTypeInArray);
-                    SEL lowerSelector = NSSelectorFromString(kGetTypeInArrayLower);
-                    SEL upperSelector = NSSelectorFromString(kGetTypeInArrayUpper);
                     Class innerType = nil;
                     
                     if ([result respondsToSelector:typeSelector]) {
                         innerType = (Class)[result performSelector:typeSelector withObject:propertyName];
-                    } else if ([result respondsToSelector:lowerSelector]) {
-                        innerType = (Class)[result performSelector:lowerSelector withObject:propertyName];
-                    } else if ([result respondsToSelector:upperSelector]) {
-                        innerType = (Class)[result performSelector:upperSelector withObject:propertyName];
                     }
                     
                     if (innerType) {
@@ -419,8 +436,8 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
         
         for (id<NSCopying> key in allKeys) {
             id value = [dictionary objectForKey:key];
-            
             id parsedJson = [self convertObjectToJSON:value];
+            
             if (!isNullValue(parsedJson)) {
                 [result setObject:parsedJson forKey:key];
             }
@@ -485,19 +502,11 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     objc_property_t *properties = class_copyPropertyList(classType, &propertyCount);
     NSCharacterSet *quotes = [NSCharacterSet characterSetWithCharactersInString:@"@\""];
     
-    // check if there are some properties of this classType need to be ignored
-    NSArray *ignoredProperties = nil;
-    SEL ignoredPropertiesSelector = NSSelectorFromString(@"ignoredProperties");
-    if ([classType respondsToSelector:ignoredPropertiesSelector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        NSArray *propertyArray = [classType performSelector:ignoredPropertiesSelector];
-        
-        if ([propertyArray isKindOfClass:[NSArray class]] && [propertyArray count] > 0) {
-            ignoredProperties = propertyArray;
-        }
-#pragma clang diagnostic pop
-    }
+    // get the properties need to be ignored
+    NSArray *ignoredProperties = [self ignoredPropertiesOfClass:classType];
+    
+    // get the property mapper
+    NSDictionary *propertyMapper = [self propertyMapperOfClass:classType];
     
     // iterate all the properties of parameter object
     for (unsigned int i = 0; i < propertyCount; i++) {
@@ -528,6 +537,11 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
             NSString *propertyType = [NSString stringWithCString:type encoding:NSUTF8StringEncoding];
             if (type) {
                 free(type);
+            }
+            
+            // check if the property name should be mapped to another
+            if (propertyMapper && propertyMapper[propertyName]) {
+                propertyName = propertyMapper[propertyName];
             }
             
             // trim all the redundant chars in type
@@ -580,6 +594,48 @@ id BWJSONObjectByRemovingKeysWithNullValues(id json, NSJSONReadingOptions option
     }
     
     free(properties);
+}
+
+/*!
+ * check if there are some properties of this classType need to be ignored
+ * return nil if no properties provided
+ */
++ (NSArray *)ignoredPropertiesOfClass:(Class)classType {
+    SEL ignoredPropertiesSelector = NSSelectorFromString(kIgnoredProperties);
+    
+    if ([classType respondsToSelector:ignoredPropertiesSelector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        NSArray *ignoredProperties = [classType performSelector:ignoredPropertiesSelector];
+        
+        if ([ignoredProperties isKindOfClass:[NSArray class]] && [ignoredProperties count] > 0) {
+            return ignoredProperties;
+        }
+#pragma clang diagnostic pop
+    }
+    
+    return nil;
+}
+
+/*!
+ * check if there are some property names of this classType need to be mapped to other names
+ * return nil if no mapper provided
+ */
++ (NSDictionary *)propertyMapperOfClass:(Class)classType {
+    SEL propertyMapperSelector = NSSelectorFromString(kPropertyMapper);
+    
+    if ([classType respondsToSelector:propertyMapperSelector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        NSDictionary *propertyMapper = [classType performSelector:propertyMapperSelector];
+        
+        if ([propertyMapper isKindOfClass:[NSDictionary class]] && [propertyMapper count] > 0) {
+            return propertyMapper;
+        }
+#pragma clang diagnostic pop
+    }
+    
+    return nil;
 }
 
 @end

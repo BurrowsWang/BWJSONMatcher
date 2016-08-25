@@ -30,6 +30,10 @@
     self.zip = [NSString stringWithFormat:@"%@: %@", self.country, self.zip];
 }
 
++ (NSDictionary *)propertyMapper {
+    return @{@"empty": @"void"};
+}
+
 @end
 
 @implementation FacebookParkingInfo

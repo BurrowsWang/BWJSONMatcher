@@ -8,8 +8,9 @@
 
 #import "BWJSONValueObject.h"
 
-@interface GoogleGroupInfo : NSObject <BWJSONHasToAmendProperties>
+@interface GoogleGroupInfo : NSObject <BWJSONHasToAmendProperties, BWJSONHasToMapProperty>
 
+@property (nonatomic, assign) NSInteger             userId;
 @property (nonatomic, copy) NSString                *firstname;
 @property (nonatomic, copy) NSString                *lastname;
 @property (nonatomic, copy) NSString                *email;

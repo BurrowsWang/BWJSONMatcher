@@ -14,4 +14,8 @@
     self.userDescription = jsonDictionary[@"description"];
 }
 
++ (NSDictionary *)propertyMapper {
+    return @{@"userId": @"id"};
+}
+
 @end

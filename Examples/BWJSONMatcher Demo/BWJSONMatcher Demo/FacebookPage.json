@@ -7,7 +7,8 @@
         "longitude": -122.150546,
         "state": "CA",
         "street": "1601 Willow Rd",
-        "zip": "94025"
+        "zip": "94025",
+        "void": false
     },
     "parking": {
         "lot": true,
