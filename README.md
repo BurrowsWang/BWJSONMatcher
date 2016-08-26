@@ -1,7 +1,7 @@
 BWJSONMatcher
 =========
 ![Platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
-![Pod Version](https://img.shields.io/badge/pod-v1.1.2-brightgreen.svg)
+![Pod Version](https://img.shields.io/badge/pod-v1.1.3-brightgreen.svg)
 ![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -90,6 +90,15 @@ In some cases, there will be certain properties which don't need to be extracted
 }
 ```
 
+#### How to rename the property
+It is quite common that JSON with ill-considered property names or names which are inconsistent with your convention will be returned from certain open APIs. In this circumstance, just make your data model conforms to the protocol [`BWJSONHasToMapProperty`](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/Examples/BWJSONMatcher%20Demo/BWJSONMatcher%20Demo/ValueObjects/FacebookPageInfo.h#L30), provide a property [`mapper`](https://github.com/BurrowsWang/BWJSONMatcher/blob/master/Examples/BWJSONMatcher%20Demo/BWJSONMatcher%20Demo/ValueObjects/FacebookPageInfo.m#L33) translating the name in data model to that in JSON.
+
+```objective-c
++ (NSDictionary *)propertyMapper {
+    return @{@"userId": @"id", @"userName": @"user_name"};
+}
+```
+
 Installation
 ------------
 #### Installation with CocoaPods (Recommend)
@@ -99,7 +108,7 @@ Installation
 ```ruby
 platform :ios, '6.0'
 
-pod 'BWJSONMatcher', '~>1.1.2'
+pod 'BWJSONMatcher', '~>1.1.3'
 ```
 
 ### Installation with Carthage (iOS 8+)
